@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>digitSum - Sholikah Desi Purwanti - 5026201033</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+<style>
+    p,
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+
+    #icon {
+        margin-top: 48px;
+        text-align: center;
+
+    }
+
+    body {
+        background-image: url("https://buat.web.id/wp-content/uploads/2020/08/bubble-animated-background.svg");
+    }
+</style>
+
+<body>
+    <div style="position: relative;">
+        <div id='icon'>
+            <p>For example, calling digitSum(1729) should return 1 + 7 + 2 + 9, which is 19.
+                If the number is negative, return the negation of the value.
+                For example, calling digitSum(-1729) should return -19.</p>
+        </div>
+
+    </div>
+
+    <div class="container-fluid p-5">
+        <div class="text-center">
+            <h2><b>Enter Your Number!</b></h2>
+        </div>
+        <div class="text-center">
+            <br>
+            <input type="number" name="userInput" id="userInput" placeholder="Enter Your Number!">
+            <button class="btn btn-primary" onclick="input();" id="generate">Submit</button>
+        </div>
+        <br>
+        <div>
+            <p id="hasil"></p>
+        </div>
+
+    </div>
+
+
+    <script>
+        function input() {
+            n = $("#userInput").val();
+            num = digitSum(n);
+            $("#hasil").text("The result is " + (num.toFixed(0)));
+        }
+
+        function digitSum(n) {
+            if (n == 0) {
+                return 0;
+            }
+            else if (n < 0) {
+                return -digitSum(-n);
+            }
+            else {
+                return (n % 10) + digitSum(n / 10);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
