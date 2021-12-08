@@ -22,22 +22,26 @@ class AbsenController extends Controller
     {
 
         // memanggil view tambah
-        return view('absen.tambah');
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
+
+
+        return view('absen.tambah', ['pegawai' => $pegawai]);
+
     }
 
     // method untuk insert data ke table absen
-    public function store(Request $request)
-    {
-        // insert data ke table absen
-        DB::table('absen')->insert([
-            'ID' => $request->id,
-            'IDPegawai' => $request->IDPegawai,
-            'Tanggal' => $request->Tanggal,
-            'Status' => $request->Status
-        ]);
-        // alihkan halaman ke halaman absen
-        return redirect('/absen');
-    }
+	public function store(Request $request)
+	{
+		// insert data ke table absen
+		DB::table('absen')->insert([
+			'IDPegawai' => $request->IDPegawai,
+			'Tanggal' => $request->Tanggal,
+			'Status' => $request->Status
+		]);
+		// alihkan halaman ke halaman absen
+		return redirect('/absen');
+
+	}
 
     // method untuk edit data absen
     public function edit($id)
@@ -45,7 +49,8 @@ class AbsenController extends Controller
         // mengambil data absen berdasarkan id yang dipilih
         $absen = DB::table('absen')->where('ID', $id)->get();
         // passing data absen yang didapat ke view edit.blade.php
-        return view('absen.edit', ['absen' => $absen]);
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
+		return view('absen.edit',['absen' => $absen,'pegawai' => $pegawai]);
     }
 
     // update data absen
@@ -53,7 +58,6 @@ class AbsenController extends Controller
     {
         // update data absen
         DB::table('absen')->where('ID', $request->id)->update([
-            'ID' => $request->ID,
             'IDPegawai' => $request->IDPegawai,
             'Tanggal' => $request->Tanggal,
             'Status' => $request->Status

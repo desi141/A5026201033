@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tugas CRUD - 5026201033</title>
-</head>
-<body>
+@extends('layout.bahagia')
+
+   @section('title', 'Mengedit Data Absensi')
+   @section('judulhalaman', 'Edit Absensi Pegawai')
+
+   @section('konten')
 
 	<h3>Edit Absen</h3>
 
-	<a href="/absen"> Kembali</a>
+	<a href="/absen" class="btn btn-secondary"> Kembali</a>
 
 	<br/>
 	<br/>
