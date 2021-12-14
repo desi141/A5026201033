@@ -33,6 +33,10 @@
         text-align: centerr;
     }
 
+    h5 {
+        color: white;
+    }
+
     .sidenav {
       margin-top: 100px;
       font-size: 15px;
@@ -42,9 +46,8 @@
       .row.content {height: auto;}
     }
     footer {
-        position: fixed;
-        bottom: 20px;
-        width: 100%;
+        position: sticky;
+        top: 100%;
         color: white;
     }
     body {
@@ -86,7 +89,7 @@
         <ul class="nav navbar-nav">
             <li> <a href="/pegawai"> Pegawai </a></li>
             <li><a href="/absen"> Absen </a></li>
-            <li> <a href="#"> Praktikum </a> </li>
+            <li> <a href="/masker"> Masker </a> </li>
         </ul>
         </div>
     </div>
@@ -115,7 +118,7 @@
     <footer>
         <div class="container-fluid">
             <hr style="border:solid 0.5px #744e4e">
-            <h5 class="text-center"> Hak Cipta Oleh:
+            <h5 class="text-center"> Hak Cipta Oleh
             5026201033 | Sholikah Desi Purwanti</h5>
         </div>
     </footer>

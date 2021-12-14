@@ -4,10 +4,10 @@
 <ul class="nav nav-pills nav-stacked">
     <li><a href="/pegawai" > Pegawai </a></li>
     <li class="active"><a href="/absen"> Absen </a></li>
-    <li> <a href="#"> Praktikum </a> </li>
+    <li> <a href="/masker"> Masker </a> </li>
 </ul>
 @endsection
-
+@section('title', 'Tambah Absensi Pegawai')
 @section('judulbagian', 'Tambah Data Absensi')
 @section('konten')
 	<form action="/absen/store" method="post">
