@@ -83,6 +83,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </button>
         </div>
 
@@ -90,6 +91,7 @@
             <li> <a href="/pegawai"> Pegawai </a></li>
             <li><a href="/absen"> Absen </a></li>
             <li> <a href="/masker"> Masker </a> </li>
+            <li> <a href="/keranjangbelanja"> EAS </a> </li>
         </ul>
         </div>
     </div>

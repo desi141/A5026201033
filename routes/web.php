@@ -58,3 +58,11 @@ Route::post('/masker/update','MaskerController@update');
 Route::get('/masker/hapus/{id}','MaskerController@hapus');
 Route::get('/masker/cari','MaskerController@cari');
 Route::get('/masker/view/{id}','MaskerController@detail');
+
+//route EAS
+Route::get('/keranjangbelanja','KeranjangController@index');
+Route::get('/keranjangbelanja/tambah','KeranjangController@tambah');
+Route::post('/keranjangbelanja/store','KeranjangController@store');
+Route::get('/keranjangbelanja/edit/{id}','KeranjangController@edit');
+Route::post('/keranjangbelanja/update','KeranjangController@update');
+Route::get('/keranjangbelanja/hapus/{id}','KeranjangController@hapus');
